@@ -1,0 +1,20 @@
+{
+  "name": "kaerbot",
+  "version": "1.0.0",
+  "description": "brak",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Niuu",
+  "license": "ISC",
+  "dependencies": {
+    "bot": "0.0.3",
+    "discord-anti-spam": "^1.1.6",
+    "discord.js": "^11.4.2",
+    "ffmpeg-binaries": "^4.0.0",
+    "ms": "^2.1.1",
+    "opusscript": "0.0.6",
+    "quick": "0.0.6"
+  }
+}
