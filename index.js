@@ -15,7 +15,7 @@ bot.on("ready", async () => {
 
 
 bot.on('message', msg => {
-  if (msg.toLowerCase().content === '!!ping') {
+  if (msg.content === '!!ping'.toLowerCase())) {
     msg.reply('pong');
   }
 });
