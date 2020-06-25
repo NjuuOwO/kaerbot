@@ -19,7 +19,7 @@ fs.readdir("./komendy/", (err, files) => {
   }
 
   jsfile.forEach((f, i) =>{
-    let props = require(`./commands/${f}`);
+    let props = require(`./komendy/${f}`);
     console.log(`${i}. Komenda ${f} wczytała się pomyślnie!`);
     bot.commands.set(props.help.name, props);
   });
