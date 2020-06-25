@@ -1,23 +1,23 @@
 {
-  "name": "kaerbot",
+  "name": "kaer-bot",
   "version": "1.0.0",
-  "engines": {
-    "node": "10.9.0"
-  }
-  "description": "brak",
+  "description": "",
   "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NjuuOwO/kaerbot.git"
   },
   "author": "Niuu",
   "license": "ISC",
-  "dependencies": {
-    "bot": "0.0.3",
-    "discord-anti-spam": "^1.1.6",
-    "discord.js": "^11.4.2",
-    "ffmpeg-binaries": "^4.0.0",
-    "ms": "^2.1.1",
-    "opusscript": "0.0.6",
-    "quick": "0.0.6"
-  }
+  "bugs": {
+    "url": "https://github.com/NjuuOwO/kaerbot/issues"
+  },
+  "homepage": "https://github.com/NjuuOwO/kaerbot#readme"
 }
