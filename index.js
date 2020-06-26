@@ -26,11 +26,12 @@ bot.on('message', msg => {
 	if(msg.content == '!!avatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
 
 
-	if(msg.content === '!!help'){
+	if(msg.content == '!!help'){
 		let helpembed = new Discord.RichEmbed()
 		.setTitle('Komendy')
 		.setColor('#00FFFF')
 		.setDescription('test');
+		
 		msg.channel.send(helpembed);
 	}
 });
