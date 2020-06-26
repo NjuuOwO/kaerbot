@@ -21,17 +21,13 @@ bot.on("ready", () => {
 
 bot.on('message', msg => {
 	
-	if(msg.content == '!!ping'){
-		msg.reply('pong');
-	}
-  
-	if(msg.content == '!!avatar'){
-		msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 2048}));
-	}
+	if(msg.content == '!!ping') return msg.reply('pong');
+
+	if(msg.content == '!!avatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
 
 
 	if(msg.content === '!!help'){
-		
+		return;
 	}
 });
 
