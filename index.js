@@ -27,7 +27,11 @@ bot.on('message', msg => {
 
 
 	if(msg.content === '!!help'){
-		return;
+		let helpembed = new MessageEmbed()
+		.setTitle('Komendy')
+		.setColor('#00FFFF')
+		.setDescription('test');
+		msg.channel.send(helpembed);
 	}
 });
 
