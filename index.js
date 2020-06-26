@@ -27,7 +27,7 @@ bot.on('message', msg => {
 
 
 	if(msg.content === '!!help'){
-		const helpembed = new MessageEmbed()
+		const helpembed = new MsgEmbed()
 		.setTitle('Komendy')
 		.setColor('#00FFFF')
 		.setDescription('test');
