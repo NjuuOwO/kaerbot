@@ -27,7 +27,7 @@ bot.on('message', msg => {
   }
   
   if(msg.content == '!!avatar'){
-    msg.reply(message.author.displayAvatarURL());
+    msg.reply(msg.author.displayAvatarURL());
   }
 	
 });
