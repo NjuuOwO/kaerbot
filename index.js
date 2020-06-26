@@ -5,11 +5,10 @@ const token = process.env.token;
 
 
 bot.on("ready", () => {
-  console.log(`------------------------------------------------------------------------`);
-  console.log(`Kaer BOT pomyślnie się połączył!`);
-  console.log(`------------------------------------------------------------------------`);
-  
-  
+	console.log(`------------------------------------------------------------------------`);
+	console.log(`Kaer BOT pomyślnie się połączył!`);
+	console.log(`------------------------------------------------------------------------`);
+
 	bot.user.setPresence({
 		status: 'dnd',
 		activity: {
@@ -22,14 +21,18 @@ bot.on("ready", () => {
 
 bot.on('message', msg => {
 	
-  if(msg.content == '!!ping'){
-    msg.reply('pong');
-  }
+	if(msg.content == '!!ping'){
+		msg.reply('pong');
+	}
   
-  if(msg.content == '!!avatar'){
-    msg.reply(msg.author.displayAvatarURL());
-  }
-	
+	if(msg.content == '!!avatar'){
+		msg.reply(msg.author.displayAvatarURL('format', png, 'size', 2048));
+	}
+
+
+	if(msg.content === '!!help'){
+		
+	}
 });
 
 
