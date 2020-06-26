@@ -8,8 +8,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "npm": "start"
-  },
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node ."
+  },,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NjuuOwO/kaerbot.git"
