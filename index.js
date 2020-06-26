@@ -26,7 +26,7 @@ bot.on('message', msg => {
 	}
   
 	if(msg.content == '!!avatar'){
-		msg.reply(msg.author.displayAvatarURL(format, 'png'));
+		msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: "2048"}));
 	}
 
 
