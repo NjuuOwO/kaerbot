@@ -27,7 +27,7 @@ bot.on('message', msg => {
 
 
 	if(msg.content === '!!help'){
-		const helpembed = new MsgEmbed()
+		let helpembed = new Discord.RichEmbed()
 		.setTitle('Komendy')
 		.setColor('#00FFFF')
 		.setDescription('test');
