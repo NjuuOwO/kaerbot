@@ -4,11 +4,11 @@ const bot = new Discord.Client({disableEveryone: true});
 const token = process.env.token;
 
 
-bot.on("ready", async () => {
+bot.on("ready", () => {
   console.log(`------------------------------------------------------------------------`);
   console.log(`Kaer BOT pomyślnie się połączył!`);
   console.log(`------------------------------------------------------------------------`);
-  bot.user.setStatus('dnd')
+  bot.user.setStatus('idle')
   bot.user.setActivity('Grand Theft Auto San Andreas');
 });
 
