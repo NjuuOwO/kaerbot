@@ -26,7 +26,7 @@ bot.on('message', msg => {
     msg.reply('pong');
   }
   
-  if(message.content == '!!avatar'){
+  if(msg.content == '!!avatar'){
     msg.reply(message.author.displayAvatarURL());
   }
 	
