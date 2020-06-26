@@ -8,13 +8,15 @@ bot.on("ready", () => {
   console.log(`------------------------------------------------------------------------`);
   console.log(`Kaer BOT pomyślnie się połączył!`);
   console.log(`------------------------------------------------------------------------`);
-  bot.user.setPresence({
-    status: 'dnd',
-    activity: {
-        name: 'Grand Theft Auto San Andreas',
-        type: 'PLAYING',
-    }
-})
+  
+  
+	bot.user.setPresence({
+		status: 'dnd',
+		activity: {
+			name: 'Grand Theft Auto San Andreas',
+			type: 'PLAYING',
+		}
+	})
 });
 
 
