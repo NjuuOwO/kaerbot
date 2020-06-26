@@ -12,7 +12,7 @@ bot.on("ready", () => {
     status: 'dnd',
     activity: {
         name: 'Grand Theft Auto San Andreas',
-        type: 'STREAMING',
+        type: 'PLAYING',
     }
 })
 });
