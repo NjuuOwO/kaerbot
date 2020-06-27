@@ -27,7 +27,7 @@ bot.on('message', msg => {
 	
 	
 	
-	if(cmd == '!!ping'){
+	if(cmd === 'ping'){
 		let time = (new Date().getTime() - message.createdTimestamp + "ms");
 		msg.channel.send("Pong! " + time);
 	}
