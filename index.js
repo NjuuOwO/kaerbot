@@ -1,4 +1,3 @@
-const botconf = require("./botconfig.json");
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 const token = process.env.token;
@@ -23,8 +22,32 @@ bot.on('message', msg => {
 	if(msg.channel.id != "725340463782953072") return;
 	
 	
-	if(msg.content == '!!ping') return msg.reply('pong')
+	if(msg.content.toLowerCase() == '!!ping') return msg.reply('pong')
 	if(msg.content == '!!avatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
+
+	if(msg.content)
+	if(!args[0]) return message.reply("Nie rozpoznaję tego znaku. Wybierz kamień, papier lub nożyce!");
+    let pkn = ["papier", "kamień", "nożyce"];
+    let botpkn = Math.floor((Math.random() * pkn.length))
+
+
+    if(args[0].toLowerCase() == "papier"){
+      if(pkn[botpkn] == "papier") return message.reply("Wybrałem papier :raised_back_of_hand: REMIS!");
+      if(pkn[botpkn] == "kamień") return message.reply("Wybrałem kamień :right_facing_fist: Wygrałeś!");
+      if(pkn[botpkn] == "nożyce") return message.reply("Wybrałem nożyce :v: Wygrałem!");
+    }
+
+    if(args[0].toLowerCase() == "kamień"){
+      if(pkn[botpkn] == "papier") return message.reply("Wybrałem papier :raised_back_of_hand: Wygrałem!");
+      if(pkn[botpkn] == "kamień") return message.reply("Wybrałem kamień :right_facing_fist: REMIS!");
+      if(pkn[botpkn] == "nożyce") return message.reply("Wybrałem nożyce :v: Wygrałeś!");
+    
+    if(args[0].toLowerCase() == "nożyce"){
+      if(pkn[botpkn] == "papier") return message.reply("Wybrałem papier :raised_back_of_hand: Wygrałeś!");
+      if(pkn[botpkn] == "kamień") return message.reply("Wybrałem kamień :right_facing_fist: Wygrałem!");
+      if(pkn[botpkn] == "nożyce") return message.reply("Wybrałem nożyce :v: REMIS!");
+    }}
+	
 	
 	if(msg.content == '!!help'){
 		let helpembed = new Discord.MessageEmbed()
@@ -32,7 +55,8 @@ bot.on('message', msg => {
 		.setColor('#00FFFF')
 		.addField("!!help", 'Pokazuje komendy')
 		.addField("!!avatar", 'Pokazuje twój avatar')
-		.addField("!!ping", 'Pong');
+		.addField("!!ping", 'Pong')
+		.addField("!!pkn <papier/kamień/nożyce", 'Gra w papier, kamień, nożyce');
 		
 		msg.channel.send(helpembed);
 	}
