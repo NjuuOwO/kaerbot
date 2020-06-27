@@ -23,21 +23,9 @@ bot.on('message', msg => {
 	if(msg.channel.id != "725340463782953072") return;
 	
 	
-	if(msg.content == '!!ping') return msg.reply('pong');
-
-
+	if(msg.content == '!!ping') return msg.reply('pong')
 	if(msg.content == '!!avatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
-
-
-	if(msg.content == '!!avatar'){
-		let wzmianka = msg.mentions.users.first();
-		if(!wzmianka) wzmianka = msg.author;
-		console.log(wzmianka);
-		
-		msg.channel.send(wzmianka.avatarURL({format: "png", dynamic: true, size: 4096}));
-	}
 	
-
 	if(msg.content == '!!help'){
 		let helpembed = new Discord.MessageEmbed()
 		.setTitle('Komendy')
@@ -50,4 +38,4 @@ bot.on('message', msg => {
 });
 
 
-bot.login(token)
+bot.login("token")
