@@ -27,14 +27,14 @@ bot.on('message', msg => {
 	
 	
 	
-	if(cmd == 'ping'){
+	if(cmd == '!!ping'){
 		let time = (new Date().getTime() - message.createdTimestamp + "ms");
 		msg.channel.send("Pong! " + time);
 	}
 	
-	if(cmd == 'avatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
+	if(cmd == '!!avatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
 
-	if(cmd == 'pkn'){
+	if(cmd == '!!pkn'){
 		if(!args[0]) return msg.reply("Nie rozpoznaję tego znaku. Wybierz kamień, papier lub nożyce!");
 		let pkn = ["papier", "kamień", "nożyce"];
 		let botpkn = Math.floor((Math.random() * pkn.length))
@@ -59,7 +59,7 @@ bot.on('message', msg => {
 		}
 	}
 	
-	if(cmd == "bot"){
+	if(cmd == "!!bot"){
 		let botavatar = bot.user.displayAvatarURL;
 		let botembed = new Discord.RichEmbed()
 		.setDescription("**Informacje o njuBocie**")
@@ -73,7 +73,7 @@ bot.on('message', msg => {
 	}
 	
 	
-	if(cmd == 'help'){
+	if(cmd == '!!help'){
 		let helpembed = new Discord.MessageEmbed()
 		.setTitle('Komendy')
 		.setColor('#00FFFF')
