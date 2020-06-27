@@ -25,21 +25,24 @@ bot.on('message', msg => {
 	
 	if(msg.content == '!!ping') return msg.reply('pong');
 
+
+	if(msg.content == '!!avatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
+
+
 	if(msg.content == '!!avatar'){
 		let wzmianka = msg.mentions.users.first();
 		if(!wzmianka) wzmianka = msg.author;
 		
-		msg.channel.send(wzmianka.avatarURL);
+		msg.channel.send(wzmianka.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
 	}
-
+	
 
 	if(msg.content == '!!help'){
 		let helpembed = new Discord.MessageEmbed()
 		.setTitle('Komendy')
 		.setColor('#00FFFF')
 		.addField("!!help", 'Pokazuje komendy')
-		.addField("!!avatar", 'Pokazuje twój, lub wspomianej osoby awatar.')
-		.addField("!!ping", 'Pong!');
+		.addField("!!avatar", 'Pokazuje twój avatar')
 		
 		msg.channel.send(helpembed);
 	}
