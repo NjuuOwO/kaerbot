@@ -26,8 +26,8 @@ bot.on('message', msg => {
 	if(msg.content == '!!ping') return msg.reply('pong');
 
 	if(msg.content == '!!avatar'){
-		let user = message.mentions.users.first();
-		if(!user) user = message.author;
+		let wzmianka = msg.mentions.users.first();
+		if(!wzmianka) wzmianka = msg.author;
 		
 		msg.channel.send(user.avatarURL);
 	}
