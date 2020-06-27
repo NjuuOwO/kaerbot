@@ -46,12 +46,13 @@ bot.on('message', msg => {
 			if(pkn[botpkn] == "papier") return msg.reply("Wybrałem papier :raised_back_of_hand: Wygrałem!");
 			if(pkn[botpkn] == "kamień") return msg.reply("Wybrałem kamień :right_facing_fist: REMIS!");
 			if(pkn[botpkn] == "nożyce") return msg.reply("Wybrałem nożyce :v: Wygrałeś!");
+		}
 		
 		if(args[0].toLowerCase() == "nożyce"){
 			if(pkn[botpkn] == "papier") return msg.reply("Wybrałem papier :raised_back_of_hand: Wygrałeś!");
 			if(pkn[botpkn] == "kamień") return msg.reply("Wybrałem kamień :right_facing_fist: Wygrałem!");
 			if(pkn[botpkn] == "nożyce") return msg.reply("Wybrałem nożyce :v: REMIS!");
-		}}
+		}
 	}
 	
 	
