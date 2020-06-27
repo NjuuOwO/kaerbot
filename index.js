@@ -27,10 +27,14 @@ bot.on('message', msg => {
 	
 	
 	
-	if(cmd == '!!ping') return msg.reply('pong')
-	if(cmd == '!!avatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
+	if(cmd == 'ping'){
+		let time = (new Date().getTime() - message.createdTimestamp + "ms");
+		msg.channel.send("Pong! " + time);
+	}
+	
+	if(cmd == 'avatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
 
-	if(cmd == '!!pkn'){
+	if(cmd == 'pkn'){
 		if(!args[0]) return msg.reply("Nie rozpoznaję tego znaku. Wybierz kamień, papier lub nożyce!");
 		let pkn = ["papier", "kamień", "nożyce"];
 		let botpkn = Math.floor((Math.random() * pkn.length))
@@ -55,13 +59,27 @@ bot.on('message', msg => {
 		}
 	}
 	
+	if(cmd == "bot"){
+		let botavatar = bot.user.displayAvatarURL;
+		let botembed = new Discord.RichEmbed()
+		.setDescription("**Informacje o njuBocie**")
+		.setColor("#15f153")
+		.setThumbnail(bicon)
+		.addField("Nazwa bota", bot.user.username, true)
+		.addField("Stworzony", bot.user.createdAt, true)
+		.addField("Biblioteka", 'discord.js', true);
+
+		return message.channel.send(botembed);
+	}
 	
-	if(cmd == '!!help'){
+	
+	if(cmd == 'help'){
 		let helpembed = new Discord.MessageEmbed()
 		.setTitle('Komendy')
 		.setColor('#00FFFF')
 		.addField("!!help", 'Pokazuje komendy')
 		.addField("!!avatar", 'Pokazuje twój avatar')
+		.addField("!!bot", 'Wyświetla informacje o bocie')
 		.addField("!!ping", 'Pong')
 		.addField("!!pkn <papier/kamień/nożyce", 'Gra w papier, kamień, nożyce');
 		
