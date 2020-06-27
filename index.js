@@ -20,17 +20,27 @@ bot.on("ready", () => {
 
 
 bot.on('message', msg => {
+	if(msg.channel.id != "725340463782953072") return;
+	
 	
 	if(msg.content == '!!ping') return msg.reply('pong');
 
-	if(msg.content == '!!avatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
+	if(msg.content == '!!avatar'){
+		let wzmianka = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
+
+		if(!args[0]) return msg.reply(msg.author.avatarURL);
+		if(args[0] != wzmianka) return msg.reply(msg.author.avatarURL);
+		if(args[0] == wzmianka) return msg.reply(msg.mentions.users.first().avatarURL);
+	}
 
 
 	if(msg.content == '!!help'){
-		let helpembed = new Discord.RichEmbed()
+		let helpembed = new Discord.MessageEmbed()
 		.setTitle('Komendy')
 		.setColor('#00FFFF')
-		.setDescription('test');
+		.addField("!!help", 'Pokazuje komendy')
+		.addField("!!avatar", 'Pokazuje twój, lub wspomianej osoby awatar.')
+		.addField("!!ping", 'Pong!');
 		
 		msg.channel.send(helpembed);
 	}
