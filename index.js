@@ -32,6 +32,7 @@ bot.on('message', msg => {
 		.setColor('#00FFFF')
 		.addField("!!help", 'Pokazuje komendy')
 		.addField("!!avatar", 'Pokazuje twój avatar')
+		.addField("!!ping", 'Pong');
 		
 		msg.channel.send(helpembed);
 	}
