@@ -38,4 +38,4 @@ bot.on('message', msg => {
 });
 
 
-bot.login("token")
+bot.login(token)
