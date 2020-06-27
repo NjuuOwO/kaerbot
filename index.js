@@ -32,6 +32,7 @@ bot.on('message', msg => {
 	if(msg.content == '!!avatar'){
 		let wzmianka = msg.mentions.users.first();
 		if(!wzmianka) wzmianka = msg.author;
+		console.log(wzmianka);
 		
 		msg.channel.send(wzmianka.avatarURL({format: "png", dynamic: true, size: 4096}));
 	}
