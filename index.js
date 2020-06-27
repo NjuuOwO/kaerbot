@@ -20,7 +20,7 @@ bot.on("ready", () => {
 
 
 bot.on('message', msg => {
-	if(msg.channel.id != "725340463782953072" || !msg.content.startsWith("!!") || msg.author.bot) return;
+	if(msg.channel.id != "725340463782953072" || !msg.content.startsWith(prefix) || msg.author.bot) return;
 	
 	const args = msg.content.slice(prefix.length).split(' ');
 	const cmd = args.shift().toLowerCase();
