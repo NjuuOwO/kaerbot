@@ -23,14 +23,14 @@ bot.on('message', msg => {
 	if(msg.channel.id != "725340463782953072" || !msg.content.startsWith("!!") || msg.author.bot) return;
 	
 	const args = message.content.slice(prefix.length).split(' ');
-	const command = args.shift().toLowerCase();
+	const cmd = args.shift().toLowerCase();
 	
 	
 	
-	if(msg.content.toLowerCase() == '!!ping') return msg.reply('pong')
-	if(msg.content.toLowerCase() == '!!avatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
+	if(cmd == '!!ping') return msg.reply('pong')
+	if(cmd == '!!avatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
 
-	if(msg.content.toLowerCase() == '!!pkn'){
+	if(cmd == '!!pkn'){
 		if(!args[0]) return message.reply("Nie rozpoznaję tego znaku. Wybierz kamień, papier lub nożyce!");
 		let pkn = ["papier", "kamień", "nożyce"];
 		let botpkn = Math.floor((Math.random() * pkn.length))
@@ -55,7 +55,7 @@ bot.on('message', msg => {
 	}
 	
 	
-	if(msg.content.toLowerCase() == '!!help'){
+	if(cmd == '!!help'){
 		let helpembed = new Discord.MessageEmbed()
 		.setTitle('Komendy')
 		.setColor('#00FFFF')
