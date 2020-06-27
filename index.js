@@ -26,11 +26,11 @@ bot.on('message', msg => {
 	if(msg.content == '!!ping') return msg.reply('pong');
 
 	if(msg.content == '!!avatar'){
-		let wzmianka = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
+		let wzmianka = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(arguments[0]));
 
-		if(!args[0]) return msg.reply(msg.author.avatarURL);
-		if(args[0] != wzmianka) return msg.reply(msg.author.avatarURL);
-		if(args[0] == wzmianka) return msg.reply(msg.mentions.users.first().avatarURL);
+		if(!arguments[0]) return msg.reply(msg.author.avatarURL);
+		if(arguments[0] != wzmianka) return msg.reply(msg.author.avatarURL);
+		if(arguments[0] == wzmianka) return msg.reply(msg.mentions.users.first().avatarURL);
 	}
 
 
