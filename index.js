@@ -56,7 +56,7 @@ bot.on('message', msg => {
 	
 	
 	if(cmd == '!!help'){
-		let helpembed = new Discord.msgEmbed()
+		let helpembed = new Discord.MessageEmbed()
 		.setTitle('Komendy')
 		.setColor('#00FFFF')
 		.addField("!!help", 'Pokazuje komendy')
