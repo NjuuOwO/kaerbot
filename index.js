@@ -26,11 +26,10 @@ bot.on('message', msg => {
 	if(msg.content == '!!ping') return msg.reply('pong');
 
 	if(msg.content == '!!avatar'){
-		let wzmianka = msg.guild.member(msg.mentions.users.first());
-
-		if(!arguments[0]) return msg.reply(msg.author.avatarURL);
-		if(arguments[0] != wzmianka) return msg.reply(msg.author.avatarURL);
-		if(arguments[0] == wzmianka) return msg.reply(msg.mentions.users.first().avatarURL);
+		let user = message.mentions.users.first();
+		if(!user) user = message.author;
+		
+		msg.channel.send(user.avatarURL);
 	}
 
 
