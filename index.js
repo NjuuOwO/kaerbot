@@ -33,7 +33,7 @@ bot.on('message', msg => {
 		let wzmianka = msg.mentions.users.first();
 		if(!wzmianka) wzmianka = msg.author;
 		
-		msg.channel.send(wzmianka.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
+		msg.channel.send(wzmianka.avatarURL({format: "png", dynamic: true, size: 4096}));
 	}
 	
 
