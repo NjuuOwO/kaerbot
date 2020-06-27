@@ -22,7 +22,7 @@ bot.on("ready", () => {
 bot.on('message', msg => {
 	if(msg.channel.id != "725340463782953072" || !msg.content.startsWith("!!") || msg.author.bot) return;
 	
-	const args = message.content.slice(prefix.length).split(' ');
+	const args = msg.content.slice(prefix.length).split(' ');
 	const cmd = args.shift().toLowerCase();
 	
 	
@@ -31,32 +31,32 @@ bot.on('message', msg => {
 	if(cmd == '!!avatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
 
 	if(cmd == '!!pkn'){
-		if(!args[0]) return message.reply("Nie rozpoznaję tego znaku. Wybierz kamień, papier lub nożyce!");
+		if(!args[0]) return msg.reply("Nie rozpoznaję tego znaku. Wybierz kamień, papier lub nożyce!");
 		let pkn = ["papier", "kamień", "nożyce"];
 		let botpkn = Math.floor((Math.random() * pkn.length))
 
 
 		if(args[0].toLowerCase() == "papier"){
-			if(pkn[botpkn] == "papier") return message.reply("Wybrałem papier :raised_back_of_hand: REMIS!");
-			if(pkn[botpkn] == "kamień") return message.reply("Wybrałem kamień :right_facing_fist: Wygrałeś!");
-			if(pkn[botpkn] == "nożyce") return message.reply("Wybrałem nożyce :v: Wygrałem!");
+			if(pkn[botpkn] == "papier") return msg.reply("Wybrałem papier :raised_back_of_hand: REMIS!");
+			if(pkn[botpkn] == "kamień") return msg.reply("Wybrałem kamień :right_facing_fist: Wygrałeś!");
+			if(pkn[botpkn] == "nożyce") return msg.reply("Wybrałem nożyce :v: Wygrałem!");
 		}
 
 		if(args[0].toLowerCase() == "kamień"){
-			if(pkn[botpkn] == "papier") return message.reply("Wybrałem papier :raised_back_of_hand: Wygrałem!");
-			if(pkn[botpkn] == "kamień") return message.reply("Wybrałem kamień :right_facing_fist: REMIS!");
-			if(pkn[botpkn] == "nożyce") return message.reply("Wybrałem nożyce :v: Wygrałeś!");
+			if(pkn[botpkn] == "papier") return msg.reply("Wybrałem papier :raised_back_of_hand: Wygrałem!");
+			if(pkn[botpkn] == "kamień") return msg.reply("Wybrałem kamień :right_facing_fist: REMIS!");
+			if(pkn[botpkn] == "nożyce") return msg.reply("Wybrałem nożyce :v: Wygrałeś!");
 		
 		if(args[0].toLowerCase() == "nożyce"){
-			if(pkn[botpkn] == "papier") return message.reply("Wybrałem papier :raised_back_of_hand: Wygrałeś!");
-			if(pkn[botpkn] == "kamień") return message.reply("Wybrałem kamień :right_facing_fist: Wygrałem!");
-			if(pkn[botpkn] == "nożyce") return message.reply("Wybrałem nożyce :v: REMIS!");
+			if(pkn[botpkn] == "papier") return msg.reply("Wybrałem papier :raised_back_of_hand: Wygrałeś!");
+			if(pkn[botpkn] == "kamień") return msg.reply("Wybrałem kamień :right_facing_fist: Wygrałem!");
+			if(pkn[botpkn] == "nożyce") return msg.reply("Wybrałem nożyce :v: REMIS!");
 		}}
 	}
 	
 	
 	if(cmd == '!!help'){
-		let helpembed = new Discord.MessageEmbed()
+		let helpembed = new Discord.msgEmbed()
 		.setTitle('Komendy')
 		.setColor('#00FFFF')
 		.addField("!!help", 'Pokazuje komendy')
