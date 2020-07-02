@@ -64,7 +64,7 @@ bot.on('message', msg => {
 		let botembed = new Discord.MessageEmbed()
 		.setDescription("**Informacje o njuBocie**")
 		.setColor("#15f153")
-		.setThumbnail(bicon)
+		.setThumbnail(botavatar)
 		.addField("Nazwa bota", bot.user.username, true)
 		.addField("Stworzony", bot.user.createdAt, true)
 		.addField("Biblioteka", 'discord.js', true);
