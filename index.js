@@ -61,7 +61,7 @@ bot.on('message', msg => {
 
 	if(cmd == "bot"){
 		let botavatar = bot.user.displayAvatarURL;
-		let botembed = new Discord.RichEmbed()
+		let botembed = new Discord.MessageEmbed()
 		.setDescription("**Informacje o njuBocie**")
 		.setColor("#15f153")
 		.setThumbnail(bicon)
