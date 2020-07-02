@@ -65,9 +65,9 @@ bot.on('message', msg => {
 		.setDescription("**Informacje o njuBocie**")
 		.setColor("#15f153")
 		.setThumbnail(botavatar)
-		.addField("Nazwa bota", bot.user.username, true)
-		.addField("Stworzony", bot.user.createdAt, true)
-		.addField("Biblioteka", 'discord.js', true);
+		.addField("Nazwa bota", bot.user.username)
+		.addField("Stworzony", bot.user.createdAt)
+		.addField("Biblioteka", 'discord.js');
 
 		return msg.channel.send(botembed);
 	}
