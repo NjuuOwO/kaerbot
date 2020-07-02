@@ -69,7 +69,7 @@ bot.on('message', msg => {
 		.addField("Stworzony", bot.user.createdAt, true)
 		.addField("Biblioteka", 'discord.js', true);
 
-		return message.channel.send(botembed);
+		return msg.channel.send(botembed);
 	}
 
 
@@ -83,7 +83,7 @@ bot.on('message', msg => {
 		.addField("!!ping", 'Pong')
 		.addField("!!pkn <papier/kamień/nożyce", 'Gra w papier, kamień, nożyce');
 
-		msg.channel.send(helpembed);
+		return msg.channel.send(helpembed);
 	}
 });
 
