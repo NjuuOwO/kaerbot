@@ -20,14 +20,15 @@ bot.on("ready", () => {
 
 
 bot.on('message', msg => {
-	if(msg.channel.id != "725340463782953072" || !msg.content.startsWith(prefix) || msg.author.bot) return;
+	if(msg.author.bot) return;
+	if(msg.channel.id != "725340463782953072") return;
 
 	const args = msg.content.slice(prefix.length).split(/ +/);
 	const cmd = args.shift().toLowerCase();
 
 
 
-	if(cmd === 'ping'){
+	if(cmd == 'ping'){
 		let time = (new Date().getTime() - message.createdTimestamp + "ms");
 		msg.channel.send("Pong! " + time);
 	}
