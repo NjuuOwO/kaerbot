@@ -20,8 +20,7 @@ bot.on("ready", () => {
 
 
 bot.on('message', msg => {
-	if(msg.author.bot) return;
-	if(msg.channel.id != "725340463782953072") return;
+	if(msg.author.bot || msg.channel.id != "725340463782953072") return;
 
 	const args = msg.content.slice(prefix.length).split(/ +/);
 	const cmd = args.shift().toLowerCase();
