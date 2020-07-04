@@ -33,7 +33,7 @@ bot.on('message', msg => {
 
 	if(cmd == 'ping'){
 		let time = (new Date().getTime() - msg.createdTimestamp + "ms");
-		msg.channel.send("Pong! " + time);
+		msg.channel.send("Pong! :timer: " + time);
 	}
 
 	if(cmd == 'avatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
