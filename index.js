@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
-const { prefix, zmiennabezimienna } = require('./config.json');
+const { prefix } = require('./config.json');
 const token = process.env.token;
 
 
@@ -20,14 +20,14 @@ bot.on("ready", () => {
 
 
 bot.on('message', msg => {
+	const args = msg.content.slice(prefix.length).split(/ +/);
+	const cmd = args.shift().toLowerCase();
+
 	if(msg.author.bot) return;
 	if(msg.channel.id != "725340463782953072" && msg.content.startsWith(prefix)) {
 		msg.delete();
 		msg.reply("<#725340463782953072>").then(msg => msg.delete({timeout: 5000}))
 	}
-
-	const args = msg.content.slice(prefix.length).split(/ +/);
-	const cmd = args.shift().toLowerCase();
 
 
 
