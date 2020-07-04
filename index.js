@@ -23,7 +23,7 @@ bot.on('message', msg => {
 	if(msg.author.bot) return;
 	if(msg.channel.id != "725340463782953072" && msg.content.startsWith(prefix)) {
 		msg.delete();
-		msg.reply("<#725340463782953072>").then(msg => { msg.delete(timeout: 5000) })
+		msg.reply("<#725340463782953072>").then(msg => msg.delete(5000))
 	}
 
 	const args = msg.content.slice(prefix.length).split(/ +/);
