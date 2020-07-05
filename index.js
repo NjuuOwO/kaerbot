@@ -24,7 +24,7 @@ bot.on('message', msg => {
 	const cmd = args.shift().toLowerCase();
 
 	if(msg.author.bot) return;
-	if(msg.channel.id != "725340463782953072" && msg.content.startsWith(prefix)) {
+	if(msg.channel.id != "725340463782953072" && msg.content.startsWith(prefix) && !msg.member.hasPermission("ADMINISTRATOR")) {
 		msg.delete();
 		msg.reply("<#725340463782953072>").then(msg => msg.delete({timeout: 5000}))
 	}
@@ -36,7 +36,7 @@ bot.on('message', msg => {
 		msg.channel.send("Pong! :timer: " + time);
 	}
 
-	if(cmd == 'avatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
+	if(cmd == 'avatar' || cmd == 'awatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
 
 	if(cmd == 'pkn'){
 		if(!args[0]) return msg.reply("Nie rozpoznaję tego znaku. Wybierz kamień, papier lub nożyce!");
@@ -77,11 +77,11 @@ bot.on('message', msg => {
 	}
 
 
-	if(cmd == 'help'){
+	if(cmd == 'help' || cmd == 'cmd' || cmd == 'komendy'){
 		let helpembed = new Discord.MessageEmbed()
 		.setTitle('Komendy')
 		.setColor('#00FFFF')
-		.addField("!!help", 'Pokazuje komendy')
+		.addField("!!help, cmd, komendy", 'Pokazuje komendy')
 		.addField("!!avatar", 'Pokazuje twój avatar')
 		.addField("!!bot", 'Wyświetla informacje o bocie')
 		.addField("!!ping", 'Pong')
