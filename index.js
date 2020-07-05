@@ -26,14 +26,14 @@ bot.on('message', msg => {
 	if(msg.author.bot) return;
 	if(msg.channel.id != "725340463782953072" && msg.content.startsWith(prefix) && !msg.member.hasPermission("ADMINISTRATOR")) {
 		msg.delete();
-		msg.reply("<#725340463782953072>").then(msg => msg.delete({timeout: 5000}))
+		msg.reply("<#725340463782953072>").then(msg => msg.delete({timeout: 5000}));
 	}
 
 
 
 	if(cmd == 'ping'){
 		let time = (new Date().getTime() - msg.createdTimestamp + "ms");
-		msg.channel.send("Pong! :timer: " + time);
+		msg.channel.send("Pong! :timer: " + time).then(msg => msg.delete({timeout: 60000}));
 	}
 
 	if(cmd == 'avatar' || cmd == 'awatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
