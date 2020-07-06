@@ -5,9 +5,9 @@ const token = process.env.token;
 
 
 bot.on("ready", () => {
-	console.log(`------------------------------------------------------------------------`);
+	console.log(` `);
 	console.log(`Kaer BOT pomyślnie się połączył!`);
-	console.log(`------------------------------------------------------------------------`);
+	console.log(`Prefix: !!`);
 
 	bot.user.setPresence({
 		status: 'dnd',
@@ -33,10 +33,17 @@ bot.on('message', msg => {
 
 	if(cmd == 'ping'){
 		let time = (new Date().getTime() - msg.createdTimestamp + "ms");
-		msg.channel.send("Pong! :timer: " + time).then(msg => msg.delete({timeout: 60000}));
+		msg.channel.send("Pong! :timer: " + time);
 	}
 
-	if(cmd == 'avatar' || cmd == 'awatar') return msg.reply(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
+
+	if(cmd == 'avatar' || cmd == 'awatar') {
+		let pingeduser = message.mentions.users.first();
+		if(!pingeduser) return msg.channel.send(msg.pingeduser.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
+		if(pingeduser) return msg.channel.send(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
+		return;
+	}
+
 
 	if(cmd == 'pkn'){
 		if(!args[0]) return msg.reply("Nie rozpoznaję tego znaku. Wybierz kamień, papier lub nożyce!");
@@ -85,7 +92,7 @@ bot.on('message', msg => {
 		.addField("!!avatar", 'Pokazuje twój avatar')
 		.addField("!!bot", 'Wyświetla informacje o bocie')
 		.addField("!!ping", 'Pong')
-		.addField("!!pkn <papier/kamień/nożyce", 'Gra w papier, kamień, nożyce');
+		.addField("!!pkn <papier/kamień/nożyce>", 'Gra w papier, kamień, nożyce');
 
 		return msg.channel.send(helpembed);
 	}
