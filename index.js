@@ -38,10 +38,10 @@ bot.on('message', msg => {
 
 
 	if(cmd == 'avatar' || cmd == 'awatar') {
-		let pingeduser = msg.guild.member(msg.mentions.users.first())
+		let pingeduser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.cache.get(args[0]));
 
     if(!args[0] || args[0] != pingeduser) return msg.channel.send(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
-    if(args[0] == pingeduser) return msg.channel.send(msg.mentions.users.first().displayAvatarURL({format: "png", dynamic: true, size: 4096}));
+    if(args[0] == osoba) return msg.channel.send(msg.mentions.users.first().displayAvatarURL({format: "png", dynamic: true, size: 4096}));
 		return;
 	}
 
@@ -70,6 +70,7 @@ bot.on('message', msg => {
 			if(pkn[botpkn] == "nożyce") return msg.reply("Wybrałem nożyce :v: REMIS!");
 		}
 	}
+
 
 	if(cmd == "bot"){
 		let botavatar = bot.user.displayAvatarURL;
