@@ -70,23 +70,23 @@ bot.on('message', msg => {
 			if(pkn[botpkn] == "nożyce") return msg.reply("Wybrałem nożyce :v: REMIS!");
 		}
 	}
-
+boti
 	if(cmd == "bot"){
 		let botavatar = bot.user.displayAvatarURL;
-		let botembed = new Discord.MessageEmbed()
+		let botinfo_embed = new Discord.MessageEmbed()
 		.setDescription("**Informacje o njuBocie**")
 		.setColor("#15f153")
 		.setThumbnail(botavatar)
 		.addField("Nazwa bota", bot.user.username)
 		.addField("Stworzony", bot.user.createdAt)
 		.addField("Biblioteka", 'discord.js');
-
+help
 		return msg.channel.send(botembed);
 	}
 
 
 	if(cmd == 'help' || cmd == 'cmd' || cmd == 'komendy'){
-		let helpembed = new Discord.MessageEmbed()
+		let help_embed = new Discord.MessageEmbed()
 		.setTitle('Komendy')
 		.setColor('#00FFFF')
 		.addField("!!help, cmd, komendy", 'Pokazuje komendy')
