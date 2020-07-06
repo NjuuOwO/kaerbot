@@ -70,7 +70,7 @@ bot.on('message', msg => {
 			if(pkn[botpkn] == "nożyce") return msg.reply("Wybrałem nożyce :v: REMIS!");
 		}
 	}
-boti
+
 	if(cmd == "bot"){
 		let botavatar = bot.user.displayAvatarURL;
 		let botinfo_embed = new Discord.MessageEmbed()
