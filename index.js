@@ -47,11 +47,11 @@ bot.on('message', msg => {
 		}
 
 		if(args[0] == pingeduser) {
-			msg.channel.send(msg.mentions.users.first().displayAvatarURL({format: "png", dynamic: true, size: 4096}));
+			msg.channel.send(msg.pingeduser.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
 			console.log(pingeduser);
 			return;
 		}
-		
+
 	}
 
 
