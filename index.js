@@ -38,20 +38,6 @@ bot.on('message', msg => {
 
 
 	if(cmd == 'avatar' || cmd == 'awatar') {
-		// let pingeduser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.cache.get(args[0]));
-		//
-    // if(!args[0] || args[0] != pingeduser) {
-		// 	msg.channel.send(msg.author.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
-		// 	console.log(pingeduser);
-		// 	return;
-		// }
-		//
-		// if(args[0] == pingeduser) {
-		// 	msg.channel.send(msg.pingeduser.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
-		// 	console.log(pingeduser);
-		// 	return;
-		// }
-
 		let pingeduser = msg.mentions.users.first() || msg.author;
 
 		msg.channel.send(pingeduser.displayAvatarURL({format: "png", dynamic: true, size: 4096}));
