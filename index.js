@@ -80,7 +80,7 @@ bot.on('message', msg => {
 			.addField("Nazwa bota", bot.user.username)
 			.addField("Stworzony", bot.user.createdAt)
 			.addField("Biblioteka", 'discord.js');
-			return msg.channel.send(botembed);
+			return msg.channel.send(botinfo_embed);
 		}
 
 
