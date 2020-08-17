@@ -97,7 +97,7 @@ bot.on('message', msg => {
 		return
 	}
 
-	if(msg.channel.id('722073237105672202')){
+	if(msg.channel.id == '722073237105672202'){
 		if(cmd == "cc"){
 	    let wlasnyKolor = msg.member.roles.cache.find(guild => guild.name === msg.author.username);
 			// if(!wlasnyKolor) return msg.channel.send("Nie posiadasz wlasnego koloru!");
