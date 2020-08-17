@@ -26,7 +26,7 @@ bot.on('message', msg => {
 
 	if(msg.author.bot) return;
 
-	if(msg.channel.id != "725340463782953072" && msg.content.startsWith(prefix) && !msg.member.hasPermission("ADMINISTRATOR")) {
+	if(msg.channel.id != "725340463782953072" || msg.channel.id != "722073237105672202" && msg.content.startsWith(prefix) && !msg.member.hasPermission("ADMINISTRATOR")) {
 		msg.delete();
 		msg.reply("<#725340463782953072>").then(msg => msg.delete({timeout: 5000}));
 	}
