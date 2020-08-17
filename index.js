@@ -94,7 +94,7 @@ bot.on('message', msg => {
 			.addField("!!ping", 'Pong')
 			.addField("!!pkn <papier/kamień/nożyce>", 'Gra w papier, kamień, nożyce');
 
-			msg.channel.send(helpembed);
+			msg.channel.send(help_embed);
 			return
 		}
 //	}
