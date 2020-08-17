@@ -26,7 +26,7 @@ bot.on('message', msg => {
 
 	if(msg.author.bot) return;
 
-	if(msg.guild.id('725333392840982540')){
+	// if(msg.guild.id('725333392840982540')){
 		if(msg.channel.id != "725340463782953072" && msg.content.startsWith(prefix) && !msg.member.hasPermission("ADMINISTRATOR")) {
 			msg.delete();
 			msg.reply("<#725340463782953072>").then(msg => msg.delete({timeout: 5000}));
@@ -80,7 +80,6 @@ bot.on('message', msg => {
 			.addField("Nazwa bota", bot.user.username)
 			.addField("Stworzony", bot.user.createdAt)
 			.addField("Biblioteka", 'discord.js');
-	help
 			return msg.channel.send(botembed);
 		}
 
@@ -98,27 +97,27 @@ bot.on('message', msg => {
 			msg.channel.send(helpembed);
 			return
 		}
-	}
+//	}
 
 
-	if(msg.guild.id('708586385975803955')){
-		if(msg.channel.id != "722073237105672202" && msg.content.startsWith(prefix) && !msg.member.hasPermission("ADMINISTRATOR")) {
-			msg.delete();
-			msg.reply("<#722073237105672202>").then(msg => msg.delete({timeout: 5000}));
-		}
-
-		if(cmd == "cc"){
-	    let wlasnyKolor = msg.member.roles.cache.find(guild => guild.name === msg.author.username);
-			// if(!wlasnyKolor) return msg.channel.send("Nie posiadasz wlasnego koloru!");
-	     if(!wlasnyKolor) return msg.channel.send("<@363329962717216777> dodaj hlopu kolor xd");
-
-			if(!args[0]) return msg.channel.send("Wprowadż poprawny kolor hex (#ffffff) lub usuń");
-			if(args[0].toLowerCase() == "usun" || args[0].toLowerCase() == "usuń") { wlasnyKolor.delete(); msg.channel.send("Usunięto!"); return;}
-			if(args[0].length != 7) return msg.channel.send("Wprowadż poprawny kolor hex (#ffffff)");
-	    if(args[0].length == 7) { wlasnyKolor.edit({ color: args[0] }); msg.channel.send("Zmieniono!"); }
-	  }
-		
-	}
+	// if(msg.guild.id('708586385975803955')){
+	// 	if(msg.channel.id != "722073237105672202" && msg.content.startsWith(prefix) && !msg.member.hasPermission("ADMINISTRATOR")) {
+	// 		msg.delete();
+	// 		msg.reply("<#722073237105672202>").then(msg => msg.delete({timeout: 5000}));
+	// 	}
+	//
+	// 	if(cmd == "cc"){
+	//     let wlasnyKolor = msg.member.roles.cache.find(guild => guild.name === msg.author.username);
+	// 		// if(!wlasnyKolor) return msg.channel.send("Nie posiadasz wlasnego koloru!");
+	//      if(!wlasnyKolor) return msg.channel.send("<@363329962717216777> dodaj hlopu kolor xd");
+	//
+	// 		if(!args[0]) return msg.channel.send("Wprowadż poprawny kolor hex (#ffffff) lub usuń");
+	// 		if(args[0].toLowerCase() == "usun" || args[0].toLowerCase() == "usuń") { wlasnyKolor.delete(); msg.channel.send("Usunięto!"); return;}
+	// 		if(args[0].length != 7) return msg.channel.send("Wprowadż poprawny kolor hex (#ffffff)");
+	//     if(args[0].length == 7) { wlasnyKolor.edit({ color: args[0] }); msg.channel.send("Zmieniono!"); }
+	//   }
+	//
+	// }
 
 });
 
