@@ -8,7 +8,7 @@ bot.on("ready", () => {
 	console.log(` `);
 	console.log(`Kaer BOT pomyślnie się połączył!`);
 	console.log(`Prefix: !!`);
-	bot.sendMessage('196934488628920320', 'Żyję! :D');
+	// bot.sendMessage('196934488628920320', 'Żyję! :D');
 
 	bot.user.setPresence({
 		status: 'dnd',
