@@ -107,9 +107,8 @@ bot.on('message', msg => {
 			if(args[0].toLowerCase() == "usun" || args[0].toLowerCase() == "usuń") { wlasnyKolor.delete(); msg.channel.send("Usunięto!"); return;}
 			if(args[0].length != 7) return msg.channel.send("Wprowadż poprawny kolor hex (#ffffff)");
 	    if(args[0].length == 7) { wlasnyKolor.edit({ color: args[0] }); msg.channel.send("Zmieniono!"); }
+		}
 	}
-
 });
-
 
 bot.login(token)
