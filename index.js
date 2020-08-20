@@ -21,7 +21,7 @@ bot.on("ready", () => {
 
 
 bot.on('message', msg => {
-	const args = msg.content.slice(prefix.length).split(/ +/);
+	const args = msg.content.slice(prefix.length).split(/ +/).toLowerCase();
 	const cmd = args.shift().toLowerCase();
 
 	if(msg.author.bot) return;
