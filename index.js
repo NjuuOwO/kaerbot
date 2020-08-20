@@ -17,6 +17,10 @@ bot.on("ready", () => {
 			type: 'PLAYING',
 		}
 	})
+
+	const niuu = bot.fetchUser('196934488628920320');
+	bot.sendMessage(niuu, '.');
+
 });
 
 
