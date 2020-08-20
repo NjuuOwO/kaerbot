@@ -18,8 +18,8 @@ bot.on("ready", () => {
 		}
 	})
 
-	const niuu = bot.fetchUser('196934488628920320');
-	bot.sendMessage(niuu, '.');
+	const niuuwudm = await bot.users.fetch('196934488628920320');
+  niuuwudm.send('Działam na nowo! :)');
 
 });
 
