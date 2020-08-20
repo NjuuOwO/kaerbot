@@ -26,7 +26,7 @@ bot.on('message', msg => {
 
 	if(msg.author.bot) return;
 
-	if(msg.channel.id != "725340463782953072" || msg.channel.id != "722073237105672202" && msg.content.startsWith(prefix) && !msg.member.hasPermission("ADMINISTRATOR")) {
+	if(msg.channel.id != "725340463782953072" && msg.content.startsWith(prefix) && !msg.member.hasPermission("ADMINISTRATOR")) {
 		msg.delete();
 		msg.reply("<#725340463782953072>").then(msg => msg.delete({timeout: 5000}));
 	}
@@ -95,19 +95,6 @@ bot.on('message', msg => {
 
 		msg.channel.send(help_embed);
 		return
-	}
-
-	if(msg.channel.id == '722073237105672202'){
-		if(cmd == "cc"){
-	    let wlasnyKolor = msg.member.roles.cache.find(guild => guild.name === msg.author.username);
-			// if(!wlasnyKolor) return msg.channel.send("Nie posiadasz wlasnego koloru!");
-	     if(!wlasnyKolor) return msg.channel.send("<@363329962717216777> dodaj hlopu kolor xd");
-
-			if(!args[0]) return msg.channel.send("Wprowadż poprawny kolor hex (#ffffff) lub usuń");
-			if(args[0].toLowerCase() == "usun" || args[0].toLowerCase() == "usuń") { wlasnyKolor.delete(); msg.channel.send("Usunięto!"); return;}
-			if(args[0].length != 7) return msg.channel.send("Wprowadż poprawny kolor hex (#ffffff)");
-	    if(args[0].length == 7) { wlasnyKolor.edit({ color: args[0] }); msg.channel.send("Zmieniono!"); }
-		}
 	}
 });
 
