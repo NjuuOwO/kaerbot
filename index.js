@@ -21,7 +21,7 @@ bot.on("ready", () => {
 
 
 bot.on('message', msg => {
-	const args = msg.content.slice(prefix.length).split(/ +/).toLowerCase();
+	const args = msg.content.slice(prefix.length).split(/ +/);
 	const cmd = args.shift().toLowerCase();
 
 	if(msg.author.bot) return;
@@ -50,19 +50,19 @@ bot.on('message', msg => {
 		let botpkn = Math.floor((Math.random() * pkn.length))
 
 
-		if(args[0] == "papier"){
+		if(args[0].toLowerCase() == "papier"){
 			if(pkn[botpkn] == "papier") return msg.reply("Wybrałem papier :raised_back_of_hand: REMIS!");
 			if(pkn[botpkn] == "kamień") return msg.reply("Wybrałem kamień :right_facing_fist: Wygrałeś!");
 			if(pkn[botpkn] == "nożyce") return msg.reply("Wybrałem nożyce :v: Wygrałem!");
 		}
 
-		if(args[0] == "kamień"){
+		if(args[0].toLowerCase() == "kamień"){
 			if(pkn[botpkn] == "papier") return msg.reply("Wybrałem papier :raised_back_of_hand: Wygrałem!");
 			if(pkn[botpkn] == "kamień") return msg.reply("Wybrałem kamień :right_facing_fist: REMIS!");
 			if(pkn[botpkn] == "nożyce") return msg.reply("Wybrałem nożyce :v: Wygrałeś!");
 		}
 
-		if(args[0] == "nożyce"){
+		if(args[0].toLowerCase() == "nożyce"){
 			if(pkn[botpkn] == "papier") return msg.reply("Wybrałem papier :raised_back_of_hand: Wygrałeś!");
 			if(pkn[botpkn] == "kamień") return msg.reply("Wybrałem kamień :right_facing_fist: Wygrałem!");
 			if(pkn[botpkn] == "nożyce") return msg.reply("Wybrałem nożyce :v: REMIS!");
