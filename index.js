@@ -4,7 +4,7 @@ const { prefix } = require('./config.json');
 const token = process.env.token;
 
 
-bot.on("ready", () => {
+bot.on("ready", async () => {
 	console.log(` `);
 	console.log(`Kaer BOT pomyślnie się połączył!`);
 	console.log(`Prefix: !!`);
@@ -18,7 +18,7 @@ bot.on("ready", () => {
 		}
 	})
 
-	const niuuwudm = bot.users.fetch('196934488628920320');
+	const niuuwudm = await bot.users.fetch('196934488628920320');
   niuuwudm.send('Działam na nowo! :)');
 
 });
