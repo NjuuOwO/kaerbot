@@ -100,6 +100,11 @@ bot.on('message', msg => {
 		msg.channel.send(help_embed);
 		return
 	}
+
+	// if(cmd == 'dm' || cmd == 'pm' || cmd == 'pw'){
+	// 	const userToDm = args[0];
+	// }
+
 });
 
 bot.login(token)
